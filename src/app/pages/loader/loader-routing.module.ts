@@ -6,7 +6,8 @@ import { LoaderPage } from './loader.page';
 const routes: Routes = [
   {
     path: '',
-    component: LoaderPage
+    component: LoaderPage,
+    pathMatch: 'full'
   }
 ];
 
