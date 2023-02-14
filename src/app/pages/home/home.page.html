@@ -2,6 +2,7 @@
   <ion-toolbar color="success">
     <ion-buttons slot="start">
       <ion-menu-button ></ion-menu-button>
+       <!-- <ion-back-button></ion-back-button> -->
     </ion-buttons>
     <ion-title>Recycle App</ion-title>
   </ion-toolbar>
@@ -21,16 +22,19 @@
   </ion-list>
   <app-pickup-call-card
   [hasHeader]="true"
-  [hasFooter]="true"
   [createdAt]="'21/03/2023'"
   [updatedAt]="'22/03/2023 15:30:00'"
   [notes]="'we have two bags that are full, one plastic and the other one with glasses'"
   [status]="'On hold'">
+  <ion-card-header  header>
+    <ion-card-subtitle>Last pick up call</ion-card-subtitle>
+  </ion-card-header>
+  <ion-button  color="success" fill="clear" size="full" footer (click)="goToPickupCalls()">See All...</ion-button>
   </app-pickup-call-card>
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button color="success">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="add" (click)="newPickUpCall()"></ion-icon>
       </ion-fab-button>
     </ion-fab>
 </ion-content>
