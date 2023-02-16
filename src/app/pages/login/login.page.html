@@ -19,7 +19,7 @@
             <ion-input type="password" formControlName="password"></ion-input>
           </ion-item>
           <app-error-message [field]="form.get('password')" [error]="'required'"  message="Password is mandatory!"></app-error-message>
-          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email')?.valid">Forgot
+          <ion-button color="dark" fill="clear" size="full" [disabled]="!form.get('email')?.valid" (click)="forgotPassword()">Forgot
             email/password</ion-button>
           <ion-button color="success" size="full" (click)="login()" [disabled]="!form.valid">Login</ion-button>
           <ion-button color="success" fill="clear" size="full" (click)="register()">Register</ion-button>
