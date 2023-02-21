@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/store/AppState';
 import { hide, show } from 'src/app/store/Loading/loading.actions';
+// import { AppState } from 'src/app/store/AppState';
+// import { hide, show } from 'src/app/store/Loading/loading.actions';
 import { LoginPageForm } from './login.page.form';
 
 @Component({
@@ -13,7 +15,9 @@ import { LoginPageForm } from './login.page.form';
 })
 export class LoginPage implements OnInit {
   form: FormGroup;
-  constructor(private router:Router , private formBuilder:FormBuilder, private store: Store<AppState>) {
+  constructor(private router:Router , private formBuilder:FormBuilder
+    , private store: Store<AppState>
+    ) {
 
   }
 
@@ -27,7 +31,7 @@ export class LoginPage implements OnInit {
   register(){
     this.router.navigate(['register'])
   }
-  forgotPassword(){
+  forgotEmailPassword(){
     //TODO: Dispatch a show action
     this.store.dispatch(show());
     setTimeout(() => {

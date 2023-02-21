@@ -1,7 +1,9 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
+import { StoreModule } from '@ngrx/store';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { loadingReducer } from 'src/app/store/Loading/loading.reducer';
 
 import { LoginPage } from './login.page';
 
@@ -12,7 +14,11 @@ describe('LoginPage', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LoginPage ],
-      imports: [IonicModule.forRoot(), AppRoutingModule]
+      imports: [IonicModule.forRoot(),
+        AppRoutingModule,
+        StoreModule.forRoot([]),
+        StoreModule.forFeature('loading', loadingReducer),
+      ]
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginPage);

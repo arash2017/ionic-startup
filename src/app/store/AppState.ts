@@ -1,5 +1,5 @@
-import { LoadingState } from "./Loading/loadingState";
+import { LoadingState } from './Loading/loadingState';
 
-export interface AppState{
-   loading : LoadingState;
+export interface AppState {
+  loading: LoadingState;
 }
